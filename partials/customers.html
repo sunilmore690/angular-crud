@@ -1,0 +1,41 @@
+  <div class= "navbar-header" >
+
+  <div>
+  <br>
+  <br>
+ <div class="row">
+     <div class="container">
+         <a class="btn  btn-success pull-right" href="#/customer"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add new Customer</a>
+     </div>
+    <br>
+    <div class="col-md-12">
+    
+   
+        <table class="table table-striped table-bordered">
+        <thead>
+        <th>Customer Name&nbsp;</th>
+        <th>Email&nbsp;</th>
+        <th>Address&nbsp;</th>
+        <th>City&nbsp;</th>
+        <th>Country&nbsp;</th>
+        <th>Action&nbsp;</th>
+        </thead>
+        <tbody  ng-show="customers.length >   0">
+            <tr ng-repeat="data in customers">
+                <td>{{data.customerName}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.city}}</td>
+                <td>{{data.country}}</td>
+                <td><a href="#/customer/{{data.id}}" class="btn btn-warning btn-sm">Edit</a>&nbsp;&nbsp;&nbsp;<button ng-click="deleteCustomer(data.id)"
+                class="btn btn-danger btn-sm">Delete</button></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    <div class="col-md-12" ng-show="customers.length == 0">
+        <div class="col-md-12">
+            <h4>No customers found</h4>
+        </div>
+    </div>
+</div>
